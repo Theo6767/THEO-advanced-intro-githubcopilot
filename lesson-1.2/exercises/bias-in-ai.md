@@ -6,4 +6,4 @@ Now complete this exercise, you will [work directly with a model trained on real
 
 
 ### Reflections
-[What did you learn from this exercise]
+how the the ai models differentiate toxic vs non toxic prompt models

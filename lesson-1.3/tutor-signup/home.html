@@ -1,10 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>title</title>
+    <title>Co-Pilot Additional Programming Coaching</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f8f9fb;
+        }
+        header {
+            background: #29487d;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0 1rem 0;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            padding: 2rem;
+            gap: 2rem;
+        }
+        .section {
+            flex: 1 1 220px;
+            min-width: 260px;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            background: #f3f6fc;
+            border-radius: 8px;
+            padding: 1.25rem 1rem;
+            box-sizing: border-box;
+        }
+        .section h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #29487d;
+        }
+        label {
+            margin-bottom: .3rem;
+            font-weight: 600;
+        }
+        input, select, textarea {
+            margin-bottom: 1.1rem;
+            padding: .55rem;
+            font-size: 1rem;
+            border: 1px solid #cfd8dc;
+            border-radius: 5px;
+        }
+        .schedule-days {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .4rem;
+            margin-bottom: 1rem;
+        }
+        .schedule-days label {
+            font-weight: 400;
+            margin-right: .35rem;
+        }
+        .submit-btn {
+            margin: 2rem auto 0 auto;
+            padding: .8rem 2.2rem;
+            font-size: 1.12rem;
+            background: #29487d;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            letter-spacing: .5px;
+            transition: background 0.2s;
+            display: block;
+        }
+        .submit-btn:hover {
+            background: #18345b;
+        }
+        @media (max-width: 900px) {
+            form {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            .section {
+                min-width: 100%;
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        Co-Pilot Additional Programming Coaching
+    </header>
+    <form id="coachingForm" autocomplete="off">
+        <!-- Left Section: Student Information -->
+        <div class="section">
+            <h2>Student Information</h2>
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Your full name">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+            <!-- Additional contact fields can be added here -->
+        </div>
+
+        <!-- Middle Section: Coaching Options -->
+        <div class="section">
+            <h2>Coaching Options</h2>
+            <label for="coaching-type">Coaching Options *</label>
+            <select id="coaching-type" name="coaching-type" required>
+                <option value="">--Please select--</option>
+                <option value="python">Python Programming</option>
+                <option value="web">Web Design</option>
+                <option value="startup">Startup Ideas</option>
+                <option value="college">College Application</option>
+            </select>
+        </div>
+
+        <!-- Right Section: Scheduling -->
+        <div class="section">
+            <h2>Schedule Preferences</h2>
+            <label>Preferred Days *</label>
+            <div class="schedule-days">
+                <label><input type="checkbox" name="days" value="Monday">Mon</label>
+                <label><input type="checkbox" name="days" value="Tuesday">Tue</label>
+                <label><input type="checkbox" name="days" value="Wednesday">Wed</label>
+                <label><input type="checkbox" name="days" value="Thursday">Thu</label>
+                <label><input type="checkbox" name="days" value="Friday">Fri</label>
+                <label><input type="checkbox" name="days" value="Saturday">Sat</label>
+                <label><input type="checkbox" name="days" value="Sunday">Sun</label>
+            </div>
+            <label for="time">Preferred Time (24h format, e.g. 14:30) *</label>
+            <input type="time" id="time" name="time" required>
+        </div>
+        <button type="submit" class="submit-btn">Book Coaching</button>
+    </form>
+    <script>
+        // Example only: Prevent actual submit, show alert
+        document.getElementById('coachingForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you! Your coaching preferences have been submitted. (Backend integration needed for full functionality.)');
+        });
+    </script>
 </body>
 </html>
